@@ -1,5 +1,18 @@
+{{#each posts}}
+<div class="card card-body mb-2">
+    <a href="/posts/{{_id}}" class="text-dark text-decoration-none"><h4>{{title}}</h4></a>
+    <p>{{text}}</p>
+    <a href="/posts/edit/{{_id}}" class="btn btn-dark btn-block mb-2">Chỉnh sửa</a>
+    <form action="/posts/{{_id}}?_method=DELETE" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Xóa">
+    </form>
+</div>
+{{else}}
 <div class="jumbotron text-center">
     <h1>Posts</h1>
+    <p>Chưa có bài viết nào</p>
     <p>Ghi chép bài viết dễ dàng</p>
     <a href="/posts/add" class="btn btn-dark btn-lg">Viết bài mới</a>
 </div>
+{{/each}}

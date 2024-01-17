@@ -1,3 +1,3 @@
 {
-    "mongoURI":"mongodb+srv://posts:posts@posts.kkiownq.mongodb.net/?retryWrites=true&w=majority"
+    "mongoURI":"mongodb+srv://posts:posts@posts.kkiownq.mongodb.net/"
 }

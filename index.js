@@ -5,9 +5,9 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 
 const posts = require('./routes/posts')
+const Post = require('./models/Post')
 
 const app = express()
-
 app.engine('handlebars',exphbs.engine())
 app.set('view engine','handlebars')
 
@@ -21,7 +21,11 @@ connectDB()
 
 app.use('/posts',posts)
 app.get('/about',(req,res)=>res.render('about'))
-app.get('/',(req,res)=>res.render('index'))
+
+app.get('/',async (req,res)=>{
+    const posts = await Post.find().lean().sort({date:-1})
+    res.render('index',{posts})
+})
 
 const PORT = process.env.PORT || 5000
 
