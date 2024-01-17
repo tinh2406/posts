@@ -9,6 +9,7 @@ const Post = require('./models/Post')
 
 const app = express()
 app.engine('handlebars',exphbs.engine())
+app.set("views", __dirname + "/views");
 app.set('view engine','handlebars')
 
 app.use(bodyParser.urlencoded({extended:false}))
