@@ -1,5 +1,7 @@
 <h1>Simple app for create, read, update, delete post</h1>
+<br>
 <p>Using expressjs, handlebars, mongoose</p>
+<h4>Deploy url: https://posts-blush.vercel.app/</h4>
 
 <p>  
 <h4>Home page</h4>
